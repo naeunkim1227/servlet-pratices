@@ -3,8 +3,8 @@
 <%@page import="com.douzone.guestbook.dao.guestbookDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <% guestbookDAO dao = new guestbookDAO();
- 	List<guestbookVO> list = dao.findall();
+ <%
+ 	List<guestbookVO> list = (List<guestbookVO>)request.getAttribute("list");
  %>
 <html>
 <head>

@@ -20,12 +20,8 @@ public class GuestbookController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		
 		String action = request.getParameter("a");
-				
-		if("delete".equals(action)) {
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/deleteform.jsp");
-			
-			rd.forward(request, response);
-		}else if("add".equals(action)){
+		
+		if("add".equals(action)){
 
 			guestbookVO vo = new guestbookVO();
 			vo.setMessage(request.getParameter("message"));
@@ -34,6 +30,16 @@ public class GuestbookController extends HttpServlet {
 
 			new guestbookDAO().insert(vo);
 			response.sendRedirect("/guestbook02/gb"); 
+			
+		}else if("delete".equals(action)) {
+			guestbookVO vo = new guestbookVO();
+
+			vo.setNo(Integer.parseInt(request.getParameter("no")));
+			vo.setPassword(request.getParameter("password"));
+			
+			new guestbookDAO().delete(vo);
+			response.sendRedirect("/guestbook02/gb"); 
+			
 		}else {
 			guestbookDAO dao = new guestbookDAO();
 		 	List<guestbookVO> list = dao.findall();

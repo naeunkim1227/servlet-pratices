@@ -9,14 +9,14 @@
 <title>방명록</title>
 </head>
 <body>
-	<form method="post" action="delete.jsp">
+	<form method="post" action="/guestbook02/gb?a=delete">
 		<input type="hidden" name="no" value="<%=request.getParameter("no")%>">
 		<input type="password" name="password">
 		<input type="submit" value="확인">
 	<br><br>
 	</form>
 	<br>
-	<a href="/guestbook01">메인으로 돌아가기</a>
+	<a href="/guestbook02/gb">메인으로 돌아가기</a>
 	
 </body>
 </html>

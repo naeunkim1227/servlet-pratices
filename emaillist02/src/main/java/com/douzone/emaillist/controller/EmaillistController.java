@@ -41,7 +41,7 @@ public class EmaillistController extends HttpServlet {
 			
 			new EmaillistDAO().insert(vo);
 			response.sendRedirect("/emaillist02/el"); 
-
+			
 		}else {
 			EmaillistDAO dao = new EmaillistDAO();
 			List<EmaillistVO> list = dao.findAll();

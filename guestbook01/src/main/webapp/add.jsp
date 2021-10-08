@@ -12,5 +12,5 @@
 	vo.setPassword(request.getParameter("password"));
 
 	new guestbookDAO().insert(vo);
-	 response.sendRedirect("/guestbook01"); 
+	response.sendRedirect("/guestbook01"); 
 %>

@@ -14,4 +14,4 @@ select * from guestbook;
 -- delete
 delete from gueskbook where no = 2 and password = '1235';
 
-
+delete from guestbook where no = 6;
